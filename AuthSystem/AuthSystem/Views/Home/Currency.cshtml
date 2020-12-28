@@ -1,0 +1,45 @@
+﻿@model AuthSystem.Models.Currency
+
+@{
+    ViewData["Title"] = "Currency";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Currency</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rates)
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Rates.Values)*@
+                <label>Rate</label>
+            </th>
+           
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Rates)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Key)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+            </tr>
+        }
+       
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Date)
+                </td>
+            </tr>
+        
+    </tbody>
+</table>
